@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PSContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PSContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:44301/Task.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:complexType name="TaskApi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateTimeAddeed" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Priority" type="q1:Priorities" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="StatusTask" type="q2:Statuses" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskApi" nillable="true" type="tns:TaskApi" />
+  <xs:complexType name="ArrayOfTaskApi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskApi" nillable="true" type="tns:TaskApi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskApi" nillable="true" type="tns:ArrayOfTaskApi" />
+</xs:schema>

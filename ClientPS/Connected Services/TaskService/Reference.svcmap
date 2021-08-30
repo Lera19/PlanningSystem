@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="86fea938-9ec9-48b0-ae11-5fbbd0be24d3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:44301/Task.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Task.disco" MetadataType="Disco" ID="2e70ca60-0cb1-4479-b7cc-95941e8f0e4f" SourceId="1" SourceUrl="http://localhost:44301/Task.svc?disco" />
+    <MetadataFile FileName="Task.xsd" MetadataType="Schema" ID="ae409c65-2e68-4a99-adc6-b2dc11b56f7b" SourceId="1" SourceUrl="http://localhost:44301/Task.svc?xsd=xsd0" />
+    <MetadataFile FileName="Task1.xsd" MetadataType="Schema" ID="216c0dea-a305-4b08-801c-60cc024ec638" SourceId="1" SourceUrl="http://localhost:44301/Task.svc?xsd=xsd1" />
+    <MetadataFile FileName="Task2.xsd" MetadataType="Schema" ID="d635b9d0-d5f9-480c-ac99-a2cd4ab6ac03" SourceId="1" SourceUrl="http://localhost:44301/Task.svc?xsd=xsd3" />
+    <MetadataFile FileName="TaskService.wsdl" MetadataType="Wsdl" ID="3162f00d-6230-48fe-8e85-8bba002a8801" SourceId="1" SourceUrl="http://localhost:44301/Task.svc?wsdl" />
+    <MetadataFile FileName="Task3.xsd" MetadataType="Schema" ID="394cee31-96fc-47de-919c-9a6a0bf922a4" SourceId="1" SourceUrl="http://localhost:44301/Task.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
