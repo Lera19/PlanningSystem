@@ -5,10 +5,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B164F29E-2A2F-4611-AFAD-6F1896DC27D3}</ProjectGuid>
+    <ProjectGuid>{3E8A4500-9AC6-41A2-9226-456214C1A98A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HostPS</RootNamespace>
-    <AssemblyName>HostPS</AssemblyName>
+    <RootNamespace>AutoRejectionTask</RootNamespace>
+    <AssemblyName>AutoRejectionTask</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,10 +42,17 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.11\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,15 +66,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Utility.csproj">
+      <Project>{d0145f79-5d08-47b1-b14f-f1393c08faef}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlanningSystem\PlanningSystemDAL.csproj">
-      <Project>{E6638287-CEC5-4493-9305-802176507292}</Project>
+      <Project>{e6638287-cec5-4493-9305-802176507292}</Project>
       <Name>PlanningSystemDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\PSContract\PSContract.csproj">
-      <Project>{086A24C4-4F39-4853-99BA-E9165F9C12C0}</Project>
+      <Project>{086a24c4-4f39-4853-99ba-e9165f9c12c0}</Project>
       <Name>PSContract</Name>
     </ProjectReference>
     <ProjectReference Include="..\TaskServicePS\TaskServicePS.csproj">

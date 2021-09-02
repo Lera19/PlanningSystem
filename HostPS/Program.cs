@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HostPS
 {
@@ -11,10 +7,9 @@ namespace HostPS
     {
         public static void Main(string[] args)
         {
-            var appContext = new ApplicationContext();
             try
             {
-                var serviceHost = appContext.ServiceHost;
+                var serviceHost = new ServiceHost(typeof(TaskServicePS.TaskService));
                 serviceHost.Open();
 
                 Console.WriteLine("The service is ready.");

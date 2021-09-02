@@ -55,14 +55,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITaskService.cs" />
-    <Compile Include="Priorities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Statuses.cs" />
     <Compile Include="TaskApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Utility.csproj">
+      <Project>{d0145f79-5d08-47b1-b14f-f1393c08faef}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlanningSystem\PlanningSystemDAL.csproj">
+      <Project>{e6638287-cec5-4493-9305-802176507292}</Project>
+      <Name>PlanningSystemDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

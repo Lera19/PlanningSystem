@@ -1,10 +1,7 @@
 ﻿using PlanningSystemDAL.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
-
-namespace PlanningSystem.Interface
+namespace PlanningSystemDAL.Interface
 {
     public interface ITaskRepository
     {

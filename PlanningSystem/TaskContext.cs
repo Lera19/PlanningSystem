@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
+﻿using System.Data.Entity;
 using PlanningSystemDAL.Models;
 
-namespace PlanningSystem
+namespace PlanningSystemDAL
 {
     public class TaskContext : DbContext
     {
-        public TaskContext(): base("DefaultConnection")
+        public TaskContext() : base("DefaultConnection")
         {
             Database.SetInitializer(new Initializer());
         }

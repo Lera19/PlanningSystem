@@ -60,35 +60,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\TaskService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\TaskService\Task.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\TaskService\Task1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\TaskService\Task2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\TaskService\Task3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\TaskService\TaskService.wsdl" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PSContract.TaskApi.datasource" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Utility.csproj">
+      <Project>{d0145f79-5d08-47b1-b14f-f1393c08faef}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PSContract\PSContract.csproj">
       <Project>{086A24C4-4F39-4853-99BA-E9165F9C12C0}</Project>
       <Name>PSContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SortedTask\SortedTasksInPlanningSystem.csproj">
+      <Project>{6A5CBEEE-A001-4D4F-9851-405EA3BB6954}</Project>
+      <Name>SortedTasksInPlanningSystem</Name>
     </ProjectReference>
     <ProjectReference Include="..\TaskServicePS\TaskServicePS.csproj">
       <Project>{B68E4849-81F3-4174-8856-C5269AF3329A}</Project>
@@ -98,24 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\TaskService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\TaskService\Task.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\TaskService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\TaskService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\TaskService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
