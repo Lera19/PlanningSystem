@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRejectionService.cs" />
     <Compile Include="ITaskService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskApi.cs" />
@@ -63,13 +64,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Utility.csproj">
-      <Project>{d0145f79-5d08-47b1-b14f-f1393c08faef}</Project>
-      <Name>Utility</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PlanningSystem\PlanningSystemDAL.csproj">
       <Project>{e6638287-cec5-4493-9305-802176507292}</Project>
       <Name>PlanningSystemDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{1d711387-0e25-4cd5-9537-387cc4798472}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

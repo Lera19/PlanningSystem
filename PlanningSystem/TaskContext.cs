@@ -10,6 +10,5 @@ namespace PlanningSystemDAL
             Database.SetInitializer(new Initializer());
         }
         public DbSet<Task> Task { get; set; }
-
     }
 }

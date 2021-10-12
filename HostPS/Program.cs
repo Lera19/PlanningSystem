@@ -3,9 +3,9 @@ using System.ServiceModel;
 
 namespace HostPS
 {
-    internal static class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             try
             {

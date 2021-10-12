@@ -2,6 +2,7 @@
 using PlanningSystemDAL.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 
 namespace PlanningSystemDAL
@@ -12,8 +13,16 @@ namespace PlanningSystemDAL
         {
             using (var context = new TaskContext())
             {
-                var result = context.Task.ToList();
-                return result;
+                try
+                {
+                    var result = context.Task.ToList();
+                    return result;
+                }
+                catch
+                {
+                    return null;
+                }
+                
 
             }
         }
@@ -21,32 +30,59 @@ namespace PlanningSystemDAL
         {
             using (var context = new TaskContext())
             {
-                context.Task.Add(task);
-                context.SaveChanges();
+                try
+                {
+                    context.Task.Add(task);
+                    context.SaveChanges();
+                }
+                catch(DbEntityValidationException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
         public void DeleteTask(string id)
         {
             using (var context = new TaskContext())
             {
-                var t = context.Task.First(c => c.ID == id);
-                if (t != null)
+                
+                try
                 {
+                    var t = context.Task.First(c => c.Id == id);
                     context.Task.Remove(t);
                     context.SaveChanges();
 
                 }
-                else
+                catch(InvalidOperationException ex)
                 {
-                    Console.WriteLine("This task not found");
+                    Console.WriteLine("This task not found" + ex.Message);
                 }
-
             }
+        }
+
+        public IEnumerable<Task> GetAllTaskSort(string sort)
+        {
+            using (var context = new TaskContext())
+            {
+                switch (sort)
+                {
+                    case "Priority":
+                        return context.Task.OrderBy(c=>c.Priority).ToList();
+                    case "Status":
+                        return context.Task.OrderBy(c => c.StatusTask).ToList();
+                    case "DateTime":
+                        return context.Task.OrderByDescending(c => c.DateTimeAddeed).ToList();
+                    case "Id":
+                        return context.Task.OrderBy(c => c.Id).ToList();
+                    default:
+                        throw new Exception("Not found data");     
+                }
+            }  
         }
 
         public IEnumerable<Task> GetAllTask()
         {
-            using (var context = new TaskContext())
+            using(var context = new TaskContext())
             {
                 return context.Task.ToList();
             }
@@ -56,10 +92,17 @@ namespace PlanningSystemDAL
         {
             using (var context = new TaskContext())
             {
-                var taskResult = context.Task.First(c => c.ID == taskId);
-                context.Task.Remove(taskResult);
-                context.Task.Add(task);
-                context.SaveChanges();
+                try
+                {
+                    var taskResult = context.Task.First(c => c.Id == taskId);
+                    context.Task.Remove(taskResult);
+                    context.Task.Add(task);
+                    context.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
 
         }
@@ -68,7 +111,14 @@ namespace PlanningSystemDAL
         {
             using (var context = new TaskContext())
             {
-                return context.Task.First(c => c.ID == taskId);
+                try
+                {
+                    return context.Task.First(c => c.Id == taskId);
+                }
+                catch
+                {
+                    return null;
+                }
             }
 
         }

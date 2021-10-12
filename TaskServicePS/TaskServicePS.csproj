@@ -62,15 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StatusChanged.cs" />
     <Compile Include="TaskService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Utility.csproj">
-      <Project>{d0145f79-5d08-47b1-b14f-f1393c08faef}</Project>
-      <Name>Utility</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PlanningSystem\PlanningSystemDAL.csproj">
       <Project>{E6638287-CEC5-4493-9305-802176507292}</Project>
       <Name>PlanningSystemDAL</Name>
@@ -78,6 +73,10 @@
     <ProjectReference Include="..\PSContract\PSContract.csproj">
       <Project>{086A24C4-4F39-4853-99BA-E9165F9C12C0}</Project>
       <Name>PSContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{1d711387-0e25-4cd5-9537-387cc4798472}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

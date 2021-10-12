@@ -16,8 +16,10 @@ namespace PSContract
         [DataMember]
         public DateTime DateTimeAddeed { get; set; }
         [DataMember]
-        public Statuses StatusTask { get; set; }
+        public StatusesForTask StatusTask { get; set; }
         [DataMember]
         public Priorities Priority { get; set; }
+        [DataMember]
+        public StatusesForRejection StatusesForRejection { get; set; }
     }
 }
